@@ -202,9 +202,12 @@ export type AppTokenEdge = {
 
 export type Application = {
   __typename?: 'Application';
+  agents: Array<Agent>;
   description: Scalars['String'];
   id: Scalars['UUID'];
   name: Scalars['String'];
+  objects: Array<Object>;
+  serverlessFunctions: Array<ServerlessFunction>;
   universalIdentifier?: Maybe<Scalars['UUID']>;
 };
 
@@ -2968,6 +2971,7 @@ export type Query = {
   findManyRouteTriggers: Array<RouteTrigger>;
   findManyServerlessFunctions: Array<ServerlessFunction>;
   findOneAgent: Agent;
+  findOneApplication: Application;
   findOneCronTrigger: CronTrigger;
   findOneDatabaseEventTrigger: DatabaseEventTrigger;
   findOneRouteTrigger: RouteTrigger;
@@ -3076,6 +3080,11 @@ export type QueryFindAgentHandoffsArgs = {
 
 export type QueryFindOneAgentArgs = {
   input: AgentIdInput;
+};
+
+
+export type QueryFindOneApplicationArgs = {
+  id: Scalars['UUID'];
 };
 
 
