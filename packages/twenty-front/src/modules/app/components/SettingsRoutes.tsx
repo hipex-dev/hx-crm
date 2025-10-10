@@ -149,6 +149,14 @@ const SettingsAI = lazy(() =>
   })),
 );
 
+const SettingsApplications = lazy(() =>
+  import('~/pages/settings/applications/SettingsApplications').then(
+    (module) => ({
+      default: module.SettingsApplications,
+    }),
+  ),
+);
+
 const SettingsAgentForm = lazy(() =>
   import('~/pages/settings/ai/SettingsAgentForm').then((module) => ({
     default: module.SettingsAgentForm,
@@ -443,6 +451,11 @@ export const SettingsRoutes = ({
           path={SettingsPath.AIAgentDetail}
           element={<SettingsAgentForm mode="edit" />}
         />
+        <Route
+          path={SettingsPath.Applications}
+          element={<SettingsApplications />}
+        />
+
         <Route path={SettingsPath.Billing} element={<SettingsBilling />} />
         <Route path={SettingsPath.Domain} element={<SettingsDomain />} />
         <Route

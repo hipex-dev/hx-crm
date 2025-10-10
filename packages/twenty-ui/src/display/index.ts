@@ -333,6 +333,7 @@ export {
   IconPrinter,
   IconProgressCheck,
   IconPuzzle,
+  IconPuzzle2,
   IconQuestionMark,
   IconRefresh,
   IconRefreshAlert,
